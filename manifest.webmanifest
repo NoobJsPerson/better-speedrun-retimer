@@ -1,6 +1,6 @@
 {
-  "name": "Better Speedrun Timer",
-  "short_name": "BST",
+  "name": "Better Speedrun Retimer",
+  "short_name": "BSR",
   "description": "Takes start and stop points of a YouTube video, down to the frame, and gives the time between them in the format 1:23:45.678",
   "theme_color": "#ff5252",
   "background_color": "#333",
