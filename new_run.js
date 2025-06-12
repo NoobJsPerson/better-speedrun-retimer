@@ -67,7 +67,7 @@ let framerate = 30;
 let pauseCount = 0;
 let userChoseFps = false;
 let isFpsDetected = false;
-let isLoaded = false;
+// let isLoaded = false;
 let showVidInfo = false;
 let twitch;
 let youtube;
@@ -328,9 +328,9 @@ switch (type) {
 		fpsInfoButton.style.display = 'inline';
 		vidInfoButton.style.display = 'inline';
 		videoIframe.src = `https://www.youtube.com/embed/${videoId}?enablejsapi=1`;
-		function onYoutubeChange(event) {
-			if (event.data === -1) isLoaded = true;
-		}
+		// function onYoutubeChange(event) {
+		// 	if (event.data === -1) isLoaded = true;
+		// }
 
 		function onYoutubeError(event) {
 			console.log(event);
@@ -365,12 +365,9 @@ switch (type) {
 				events: {
 					onReady: onYoutubeReady,
 					onError: onYoutubeError,
-					onStateChange: onYoutubeChange,
+					// onStateChange: onYoutubeChange,
 				},
 			});
-			setTimeout(() => {
-				if (isLoaded !== true) onYoutubeError();
-			}, 5000);
 		}
 		break;
 	}
@@ -457,7 +454,10 @@ switch (type) {
 
 function parseForTime(event) {
 	framerate = parseInt(document.getElementById('framerateAlt').value || framerate, 10);
-	const { lct } = JSON.parse(event.target.value);
+	const json = JSON.parse(event.target.value);
+	let { lct } = json;
+	// if lct is undefined that means the user gave a number so we set it back to the json
+	if (lct === undefined) lct = json;
 	// eslint-disable-next-line no-restricted-globals
 	if (event.target.id === 'startobj') start = lct * 1000 | 0; /* eslint-disable-line no-bitwise */
 	else end = lct * 1000 | 0; /* eslint-disable-line no-bitwise */

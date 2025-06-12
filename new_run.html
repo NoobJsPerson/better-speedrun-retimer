@@ -34,6 +34,7 @@
 		}
 
 		@media (max-width: 700px) {
+
 			iframe,
 			img,
 			video,
@@ -54,6 +55,22 @@
 			<button onclick="window.open('https://github.com/NoobJsPerson/better-speedrun-retimer','_blank').focus();"
 				id="sourcecodebutton">Source Code</button>
 		</div>
+		<div class="for-debug normal" style="display: none;">
+			<p>
+				<label for="framerateAlt">Framerate</label>
+				<input type="text" value="30" id="framerateAlt" onchange="validateFramerate()">
+			</p>
+			<p>
+				<label for="startobj">Starting frame: </label>
+				<input type="text" id="startobj" style='width:80%' onchange='parseForTime(event)' />
+			</p>
+			<p>
+				<label for="endobj">Ending frame: </label>
+				<input type="text" id="endobj" style='width:80%' onchange='parseForTime(event)' />
+			</p>
+			<h3 id="video-time">Video Time</h3>
+			<button id="computeButton" onclick="updateTotalTime()">Compute time</button>
+		</div>
 		<div class="for-player">
 			<div id="video-div"></div>
 			<iframe id="video-iframe" allowfullscreen></iframe>
@@ -63,7 +80,8 @@
 				<input type="text" id="framerate" onchange="validateFramerate(true)">
 				<button id="vidinfo" style="display: none;" onclick="toggleVideoInfo()">Show Video Info</button>
 				<button id="fpsinfo" style="display: none;">?</button>
-				<div id="popup">You could get the video framerate by clicking on "Show Video Info". It will be the number next to the @</div>
+				<div id="popup">You could get the video framerate by clicking on "Show Video Info". It will be the
+					number next to the @</div>
 				<br>
 				<span id="sfb" class="bold">Step forward or backward:</span>
 				<br>
@@ -119,7 +137,8 @@
 					<div id="pause-end-div">
 						<span id="pet" class="bold">Pause End: </span><span id="pause-end">Not set</span>
 						<button id='set-pause-end' onclick="setPauseEnd(this)">Set current time as end pause</button>
-						<button id='go-to-end-pause' onclick="goToPauseEnd(this)" style="display: none;">Go to pause end time</button>
+						<button id='go-to-end-pause' onclick="goToPauseEnd(this)" style="display: none;">Go to pause end
+							time</button>
 					</div>
 					<div id="pause-delete-div">
 						<button id="delete-pause" onclick="deletePause(this)">Remove Pause</button>
@@ -128,28 +147,12 @@
 				<div id="pause-container">
 				</div>
 			</div>
-			<div class="for-debug" style="display: none;">
-				<p>
-					<label for="framerateAlt">framerate</label>
-					<input type="text" value="30" id="framerateAlt" onchange="validateFramerate()">
-				</p>
-				<p>
-					<label for="startobj">Starting frame: </label>
-					<input type="text" id="startobj" style='width:80%' onchange='parseForTime(event)' />
-				</p>
-				<p>
-					<label for="endobj">Ending frame: </label>
-					<input type="text" id="endobj" style='width:80%' onchange='parseForTime(event)' />
-				</p>
-				<h3 id="video-time">Video Time</h3>
-				<button id="computeButton" onclick="updateTotalTime()">Compute time</button>
-			</div>
-			<div class="normal">
-				<textarea id="modMessage" cols="40" rows="5" disabled></textarea>
+		</div>
+		<div class="normal">
+			<textarea id="modMessage" cols="40" rows="5" disabled></textarea>
 
-				<button id="modMessageButton" onclick="copyModMessage()" disabled>Copy Mod Message to Clipboard</button>
-				<br><br>
-			</div>
+			<button id="modMessageButton" onclick="copyModMessage()" disabled>Copy Mod Message to Clipboard</button>
+			<br><br>
 		</div>
 </body>
 
