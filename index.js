@@ -5,6 +5,8 @@ const ytRegex = /youtu(?:be\..+?|.be)\/(?:watch.*?v=|embed\/|shorts\/|)([A-Za-z0
 const twitchRegex = /twitch\.tv\/videos\/(\d+)(?:\?t=)?(.+)?/;
 const driveRegex = /drive\.google\.com\/file\/d\/(.*)\//;
 
+inputUrl.focus();
+
 const select = document.getElementsByTagName('select')[0];
 select.value = localStorage.getItem('LA') || 'EN';
 select.onchange = (event) => {
