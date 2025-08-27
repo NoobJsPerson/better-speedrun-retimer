@@ -64,6 +64,6 @@ function redirect() {
 
 if ('serviceWorker' in navigator) {
 	window.addEventListener('load', () => {
-		navigator.serviceWorker.register('/speedrun-timer/ServiceWorker.js');
+		navigator.serviceWorker.register('./ServiceWorker.js');
 	});
 }
