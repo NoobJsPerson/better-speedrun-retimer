@@ -76,6 +76,14 @@ textarea {
 	border: none;
 }
 
+input, textarea, select, button {
+	font-size: 16px;
+}
+
+button {
+	touch-action: manipulation;
+}
+
 [theme="dark"] {
 	background-color: rgb(23, 23, 29);
 	color: rgb(255, 255, 255);
