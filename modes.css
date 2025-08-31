@@ -57,6 +57,7 @@ select {
 
 button,
 input {
+	touch-action: manipulation;
 	margin: 1px;
 }
 
@@ -74,14 +75,6 @@ textarea {
 	margin-bottom: 7pt;
 	border-radius: 7px;
 	border: none;
-}
-
-input, textarea, select, button {
-	font-size: 16px;
-}
-
-button {
-	touch-action: manipulation;
 }
 
 [theme="dark"] {
