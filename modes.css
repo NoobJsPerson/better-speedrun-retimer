@@ -45,6 +45,7 @@ p {
 }
 
 input {
+	font-size: 16px;
 	padding: 7pt;
 	height: 15px;
 	border-radius: 7px;
