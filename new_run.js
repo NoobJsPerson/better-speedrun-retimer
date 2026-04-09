@@ -56,7 +56,7 @@ const pauseContainer = document.getElementById('pause-container');
 const fpsInfoButton = document.getElementById('fpsinfo');
 const vidInfoButton = document.getElementById('vidinfo');
 // eslint-disable-next-line no-template-curly-in-string
-const currentModMessage = localStorage.getItem('currentModMessage') || 'Mod Message: Time starts at ${start} and ends at ${end}${pauses}with a framerate of ${framerate} FPS to get a final time of ${timeStr}.\nRetimed using [Better Speedrun Timer](https://noobjsperson.github.io/speedrun-timer)';
+const currentModMessage = localStorage.getItem('currentModMessage') || 'Mod Message: Time starts at ${start} and ends at ${end}${pauses}with a framerate of ${framerate} FPS to get a final time of ${timeStr}.\nRetimed using [Better Speedrun Retimer](https://noobjsperson.github.io/better-speedrun-retimer)';
 const pauseTimes = [];
 // Create page variables
 let start = null;
