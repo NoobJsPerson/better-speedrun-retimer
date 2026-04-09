@@ -1,4 +1,4 @@
-# speedrun-timer
+# better-speedrun-retimer
 
 A small and accurate mobile friendly speedrun retiming website.
 
